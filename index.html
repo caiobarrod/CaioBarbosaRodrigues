@@ -1,153 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Barbosa Rodrigues</title>
-    
-    <!-- Suporte para fórmulas matemáticas em LaTeX (MathJax) -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #222222;
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #ffffff;
-        }
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            color: #111111;
-            font-weight: 700;
-        }
-        h2 {
-            font-size: 1.4rem;
-            margin-top: 35px;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #e5e5e5;
-            color: #111111;
-        }
-        p {
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .header-subtitle {
-            font-size: 1.1rem;
-            color: #555555;
-            margin-bottom: 25px;
-        }
-        .contact-info {
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        .photos-container {
-            display: flex;
-            gap: 15px;
-            margin: 25px 0;
-            flex-wrap: wrap;
-        }
-        .photos-container img {
-            width: calc(50% - 8px);
-            max-width: 100%;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid #e0e0e0;
-        }
-        ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-        li {
-            margin-bottom: 12px;
-        }
-        .pub-title {
-            font-weight: 600;
-        }
-        .pub-authors {
-            color: #444444;
-        }
-        .pub-details {
-            font-size: 0.9rem;
-            color: #666666;
-        }
-        @media (max-width: 600px) {
-            .photos-container img {
-                width: 100%;
-                height: auto;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Caio Barbosa Rodrigues</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #fff;
+      color: #222;
+      margin: 40px 0;
+    }
+    .header {
+      max-width: 800px;
+      margin: 0 auto 32px auto;
+      text-align: center;
+    }
+    .header-title {
+      font-size: 2em;
+      font-weight: bold;
+      color: #174c7a;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.2em;
+    }
+    .profile-container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      gap: 32px;
+    }
+    .profile-image img {
+      width: 300px;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .profile-text {
+      max-width: 370px;
+      font-size: 1.07em;
+      line-height: 1.6;
+    }
+    /* New: Side image placed below description inside profile-text */
+    .profile-text .side-image {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .side-image img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: none;
+      display: block;
+      background: transparent;
+    }
+    .content-wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+    .main-content {
+      flex: 2;
+      min-width: 0;
+    }
+    .main-content h2:first-of-type {
+  margin-top: 0;
+}
+    h2 {
+      margin-top: 40px;
+      font-size: 1.3em;
+      color: #174c7a;
+    }
+    a {
+      color: #1c67b2;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+      .side-image img {
+        width: 160px;
+      }
+    }
+    @media (max-width: 700px) {
+      .header,
+      .profile-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .profile-text {
+        max-width: 90vw;
+        text-align: center;
+      }
+      .content-wrapper {
+        max-width: 98vw;
+        padding: 0 2vw;
+      }
+    }
+    .main-content ul li {
+      margin-bottom: 12px;
+    }
+  </style>
 </head>
 <body>
+  <div class="header">
+    <span class="header-title">Caio Barbosa Rodrigues</span>
+  </div>
+  <div class="profile-container">
+    <div class="profile-image">
+      <img src="/assets/CarlosAndresToroCardona.jpeg" alt="Carlos Andres Toro Cardona">
+    </div>
+    <div class="profile-text">
+      <p>
+        I am currently a PhD student at <a href="https://impa.br/">IMPA</a> (Instituto de Matemática Pura e Aplicada) under the supervision of professor <a href="https://w3.impa.br/~l.ambrozio/">Lucas Ambrozio</a>.
+      </p>
+      <p>
+        My research area is Differential Geometry and Geometric Analysis. More specifically, I'm interested in geometric functionals such as the Area functional and the Willmore energy.   
+      </p>
+      <!-- Side image moved below description -->
+      <div class="side-image">
+        <img src="/assets/CarlosT_transparent.png" alt="Minimal Surface Logo">
+      </div>
+    </div>
+  </div>
 
-    <header>
-        <h1>Caio Barbosa Rodrigues</h1>
-        <div class="header-subtitle">
-            PhD Student at IMPA (Instituto de Matemática Pura e Aplicada)
-        </div>
-        <div class="contact-info">
-            <strong>Advisor:</strong> Prof. Lucas Ambrozio<br>
-            <strong>Email:</strong> <a href="mailto:caio.rodrigues@impa.br">caio.rodrigues@impa.br</a> <!-- Substitua pelo seu e-mail se necessário -->
-        </div>
-    </header>
+  <div class="content-wrapper">
+    <div class="main-content">
+      <h2>Email</h2>
+      <p>caio.rodrigues@impa.br</p>
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          Bifurcations of the Clifford Torus as Willmore Surfaces in Berger Spheres (<a href="https://arxiv.org/abs/2607.02468">ArXiv</a>).
+        </li>
+      </ul>
+      <h2>Events</h2>
+      <ul>
+        <li>XI Workshop on Differential Geometry, Maceió, Alagoas-Brazil, from March 9 to 13, 2026. Poster presentation.</li>
+        <li>21st School of Differential Geometry, Teresina, Piauí-Brazil, from July 13 to July 17, 2026. Poster presentation.</li>
+        <li>European School of Differential Geometry, L'Aquila, Abruzzo-Italy, from June 22 to 03 July, 2026. Poster presentation.</li>
+    
+       
+        
 
-    <main>
-        <section id="about">
-            <p>
-                I am currently a PhD student at IMPA (Instituto de Matemática Pura e Aplicada) under the supervision of Professor Lucas Ambrozio.
-            </p>
-            <p>
-                My research area is Differential Geometry and Geometric Analysis. More specifically, I am interested in geometric functionals such as the Area functional and the Willmore energy.
-            </p>
-        </section>
+      
 
-        <section id="gallery">
-            <div class="photos-container">
-                <img src="foto1.jpg" alt="Caio Barbosa Rodrigues">
-                <img src="foto2.jpg" alt="Caio Barbosa Rodrigues em evento">
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Publications and Preprints</h2>
-            <ul>
-                <li>
-                    <span class="pub-title">Bifurcations of the Clifford Torus as Willmore Surfaces in Berger Spheres</span><br>
-                    <span class="pub-authors">Caio Barbosa Rodrigues</span><br>
-                    <span class="pub-details"><a href="https://arxiv.org" target="_blank">[arXiv]</a></span>
-                </li>
-            </ul>
-        </section>
-
-        <section id="events">
-            <h2>Events and Presentations</h2>
-            <ul>
-                <li>
-                    <strong>Evento Exemplo 1</strong>, Instituto de Matemática Pura e Aplicada (IMPA), Rio de Janeiro - Brazil, 2025.
-                </li>
-                <li>
-                    <strong>Evento Exemplo 2</strong>, Universidade de São Paulo (USP), São Paulo - Brazil, 2024. Poster presentation.
-                </li>
-            </ul>
-        </section>
-    </main>
-
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
