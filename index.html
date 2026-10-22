@@ -4,161 +4,330 @@
   <meta charset="UTF-8">
   <title>Caio Barbosa Rodrigues</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caio Barbosa Rodrigues, PhD student at IMPA. Research in differential geometry, geometric analysis, Willmore surfaces, minimal surfaces, and bifurcation theory.">
   <!-- Link atualizado e seguro da Cloudflare no lugar do polyfill.io -->
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
       background: #fff;
       color: #222;
-      margin: 40px 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
-    .header {
-      max-width: 800px;
-      margin: 0 auto 32px auto;
-      text-align: center;
+    .page {
+      width: min(900px, calc(100% - 48px));
+      margin: 36px auto 64px;
     }
     .header-title {
-      font-size: 2em;
-      font-weight: bold;
+      margin: 0 0 28px;
       color: #174c7a;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.2em;
+      font-size: 2rem;
+      line-height: 1.25;
+      letter-spacing: 0.3px;
+      text-align: center;
     }
-    .profile-container {
-      display: flex;
-      align-items: flex-start;
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      gap: 32px;
+    .profile {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      align-items: center;
+      gap: 36px;
     }
-    .profile-image img {
-      width: 300px;
-      border-radius: 8px;
+    .profile-image {
       display: block;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-    .profile-text {
-      max-width: 370px;
-      font-size: 1.07em;
-      line-height: 1.6;
-    }
-    .profile-text .side-image {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-    }
-    .side-image img {
-      width: 150px;
+      width: 220px;
+      max-width: 100%;
       height: auto;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: none;
-      display: block;
-      background: transparent;
-    }
-    .content-wrapper {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      max-width: 900px;
-      margin: 0 auto;
-      gap: 40px;
-    }
-    .main-content {
-      flex: 2;
-      min-width: 0;
-    }
-    .main-content h2:first-of-type {
       margin-top: 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
-    h2 {
-      margin-top: 40px;
-      font-size: 1.3em;
-      color: #174c7a;
+    p { margin: 0 0 14px; }
+    .education {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid #e1e8ee;
+      color: #505a63;
+      font-size: 0.94rem;
+    }
+    .education p {
+      max-width: 78ch;
+      margin: 0;
+    }
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 24px;
+      margin: 0;
     }
     a {
       color: #1c67b2;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    a:focus-visible {
+      outline: 2px solid #174c7a;
+      outline-offset: 4px;
+      border-radius: 2px;
     }
-    @media (max-width: 900px) {
-      .content-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-      }
-      .side-image img {
-        width: 160px;
-      }
+    main > section { margin-top: 36px; }
+    h2 {
+      margin: 0 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e1e8ee;
+      color: #174c7a;
+      font-size: 1.3rem;
+      line-height: 1.35;
     }
+    h3 {
+      margin: 24px 0 12px;
+      font-size: 1.02rem;
+      line-height: 1.5;
+    }
+    .research-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      align-items: center;
+      gap: 32px;
+    }
+    .research-content p { max-width: 70ch; }
+    .research-figure { margin: 0; }
+    .research-figure img {
+      display: block;
+      width: 160px;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    .research-figure figcaption {
+      margin-top: 10px;
+      color: #505a63;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .research-figure figcaption a { white-space: nowrap; }
+    .research-figure figcaption sub { line-height: 0; }
+    .publications,
+    .dated-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .publications > li {
+      max-width: 78ch;
+      margin-bottom: 24px;
+    }
+    .publication-title {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .publication-title a { color: #174c7a; }
+    .publication-authors {
+      margin-bottom: 2px;
+      font-size: 0.94rem;
+    }
+    .publication-details {
+      margin: 0;
+      color: #505a63;
+      font-size: 0.9rem;
+    }
+    .publication-link {
+      display: inline-block;
+      margin-left: 12px;
+    }
+    .dated-list > li {
+      display: grid;
+      grid-template-columns: 148px minmax(0, 1fr);
+      gap: 4px 20px;
+      margin-bottom: 18px;
+    }
+    .entry-date {
+      padding-top: 2px;
+      color: #59636c;
+      font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .entry-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+    .entry-details {
+      margin: 2px 0 0;
+      color: #505a63;
+      font-size: 0.94rem;
+    }
+    .poster-title {
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .publications > li:last-child,
+    .dated-list > li:last-child { margin-bottom: 0; }
     @media (max-width: 700px) {
-      .header,
-      .profile-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+      .page {
+        width: min(900px, calc(100% - 40px));
+        margin-top: 28px;
       }
-      .profile-text {
-        max-width: 90vw;
-        text-align: center;
+      .header-title { font-size: 1.75rem; }
+      .profile {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        gap: 22px;
       }
-      .content-wrapper {
-        max-width: 98vw;
-        padding: 0 2vw;
+      .profile-image {
+        width: 200px;
+        margin: 0 auto;
       }
-    }
-    .main-content ul li {
-      margin-bottom: 12px;
+      .profile-text { text-align: left; }
+      .profile-links { gap: 8px 20px; }
+      .research-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+      }
+      .research-content p { margin-bottom: 0; }
+      .research-figure {
+        width: 300px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .research-figure img { width: 120px; }
+      .publication-details,
+      .entry-date { font-size: 0.9375rem; }
+      .dated-list > li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3px;
+        margin-bottom: 20px;
+      }
+      .entry-date { padding-top: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <span class="header-title">Caio Barbosa Rodrigues</span>
-  </div>
-  <div class="profile-container">
-    <div class="profile-image">
-      <img src="assets/foto1.jpeg" alt="Caio Barbosa Rodrigues">
-    </div>
-    <div class="profile-text">
-      <p>
-        I am currently a PhD student at <a href="https://impa.br/">IMPA</a> (Instituto de Matemática Pura e Aplicada) under the supervision of Professor <a href="https://w3.impa.br/~l.ambrozio/">Lucas Ambrozio</a>, with my thesis defense expected in March 2027.
-      </p>
-      <p>
-        My research area are Differential Geometry and Geometric Analysis. More specifically, I'm interested in geometric functionals such as the area functional and the Willmore energy.   
-      </p>
-      <div class="side-image">
-        <img src="assets/foto2.jpg" alt="Bifurcated surface">
+  <div class="page">
+    <header>
+      <h1 class="header-title">Caio Barbosa Rodrigues</h1>
+      <div class="profile">
+        <img class="profile-image" src="assets/foto1.jpeg" alt="Caio Barbosa Rodrigues" width="220" height="165">
+        <div class="profile-text">
+          <p>
+            I am a PhD student at <a href="https://impa.br/">IMPA</a> (Institute for Pure and Applied Mathematics), supervised by Professor <a href="https://w3.impa.br/~l.ambrozio/">Lucas Ambrozio</a>. My thesis defense is expected in March 2027.
+          </p>
+          <p>
+            My research interests lie in differential geometry and geometric analysis, with a focus on Willmore surfaces, minimal surfaces, and bifurcation theory.
+          </p>
+          <div class="profile-links">
+            <a href="mailto:caio.rodrigues@impa.br">caio.rodrigues@impa.br</a>
+            <a href="assets/cv-caio-barbosa-rodrigues.pdf" type="application/pdf">Curriculum Vitae (PDF)</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <div class="content-wrapper">
-    <div class="main-content">
-      <h2>Email</h2>
-      <p>caio.rodrigues@impa.br</p>
+    <main>
+      <section aria-labelledby="research-heading">
+        <h2 id="research-heading">Research</h2>
+        <div class="research-content">
+          <p>
+            In my <a href="https://arxiv.org/abs/2607.02468">preprint</a>, I obtain new symmetric Willmore tori in Berger spheres that bifurcate from the Clifford torus. The proof uses Morse index estimates and bifurcation theory.
+          </p>
+          <figure class="research-figure">
+            <img src="assets/foto2.jpg" alt="Illustration of a lobed surface with a central opening" width="160" height="157">
+            <figcaption>Stereographic projection of an approximation to a Willmore torus on the branch bifurcating at <a href="https://arxiv.org/html/2607.02468v2#S6.Thmtheorem2" title="Theorem 6.2 (Bifurcations of the Clifford torus)" aria-label="tau 4, Theorem 6.2"><i>τ</i><sub>4</sub></a>.</figcaption>
+          </figure>
+        </div>
+      </section>
 
-      <h2>Publications</h2>
-      <ul>
-        <li>
-          Bifurcations of the Clifford Torus as Willmore Surfaces in Berger Spheres (<a href="https://arxiv.org/abs/2607.02468">ArXiv</a>).
-        </li>
-      </ul>
+      <section aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications and Preprints</h2>
+        <ul class="publications">
+          <li>
+            <h3 class="publication-title"><a href="https://arxiv.org/abs/2607.02468">Bifurcations of the Clifford Torus as Willmore Surfaces in Berger Spheres</a></h3>
+            <p class="publication-authors">Caio B. Rodrigues</p>
+            <p class="publication-details">Preprint, 2026 <a class="publication-link" href="https://arxiv.org/abs/2607.02468">arXiv</a></p>
+          </li>
+          <li>
+            <h3 class="publication-title"><a href="https://doi.org/10.24330/ieja.1144159">On solubility of groups with finitely many centralizers</a></h3>
+            <p class="publication-authors">Igor Lima and Caio Rodrigues</p>
+            <p class="publication-details"><cite>International Electronic Journal of Algebra</cite> <strong>32</strong> (2022), 241–245 <a class="publication-link" href="https://doi.org/10.24330/ieja.1144159">Journal</a></p>
+          </li>
+        </ul>
+      </section>
 
-      <h2>Events</h2>
-      <ul>
-        <li>21st School of Differential Geometry, Teresina, Piauí-Brazil, from July 13 to 17, 2026. Poster presentation.</li>
-        <li>European School of Differential Geometry, L'Aquila, Abruzzo-Italy, from June 22 to July 3, 2026. Poster presentation.</li>
-        <li>XI Workshop on Differential Geometry, Maceió, Alagoas-Brazil, from March 9 to 13, 2026. Poster presentation.</li>
-      </ul>
-    </div>
-  </div>
-</body>
-</html>
+      <section aria-labelledby="talks-heading">
+        <h2 id="talks-heading">Talks and Posters</h2>
+        <h3>Invited Talks</h3>
+        <ul class="dated-list">
+          <li>
+            <time class="entry-date" datetime="2026-10-06">6 Oct 2026</time>
+            <div>
+              <p class="entry-title">Bifurcations of the Clifford Torus as Willmore Surfaces in Berger Spheres</p>
+              <p class="entry-details">Differential Geometry Seminar, IMPA</p>
+            </div>
+          </li>
+        </ul>
+
+        <h3>Poster Presentations</h3>
+        <p class="poster-title">Willmore Bifurcations of the Clifford Torus in Berger Spheres</p>
+        <ul class="dated-list">
+          <li>
+            <span class="entry-date">13–17 Jul 2026</span>
+            <div>
+              <p class="entry-title">22nd School of Differential Geometry</p>
+              <p class="entry-details">Teresina, Piauí, Brazil</p>
+            </div>
+          </li>
+          <li>
+            <span class="entry-date">22 Jun–3 Jul 2026</span>
+            <div>
+              <p class="entry-title">European School of Differential Geometry</p>
+              <p class="entry-details">L'Aquila, Abruzzo, Italy</p>
+            </div>
+          </li>
+          <li>
+            <span class="entry-date">9–13 Mar 2026</span>
+            <div>
+              <p class="entry-title">XI Workshop on Differential Geometry</p>
+              <p class="entry-details">Maceió, Alagoas, Brazil</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="teaching-heading">
+        <h2 id="teaching-heading">Teaching</h2>
+        <ul class="dated-list">
+          <li>
+            <span class="entry-date">Jan–Feb 2025 and 2026</span>
+            <div>
+              <p class="entry-title">Differential Geometry of Curves and Surfaces</p>
+              <p class="entry-details">Teaching Assistant · IMPA Summer School · Master's-level course</p>
+            </div>
+          </li>
+          <li>
+            <span class="entry-date">1st semester 2016</span>
+            <div>
+              <p class="entry-title">Calculus I</p>
+              <p class="entry-details">Teaching Assistant · University of Brasília (UnB) · Undergraduate course</p>
+            </div>
+          </li>
+          <li>
+            <span class="entry-date">2016</span>
+            <div>
+              <p class="entry-title">Physics I</p>
+              <p class="entry-details">Tutor · University of Brasília (UnB) · Undergraduate course</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="education" aria-label="Education">
+      <p>I hold a master's degree in Pure Mathematics from IMPA (2022) and a bachelor's degree in Mathematics from the University of Brasília (UnB, 2020).</p>
+    </footer>
   </div>
 </body>
 </html>
